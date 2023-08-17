@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.Random;
 
@@ -28,27 +29,35 @@ public class GuessingGame {
         int randNumber = rand.nextInt(100);
 
         System.out.print("Your guess? ");
-        int guess = scan.nextInt();
-        int countGuesses = 1;
+        int countGuesses = 0;
 
-        if (guess != randNumber) {
-            while (guess != randNumber) {
-                countGuesses++;
-                if (guess < randNumber) {
-                    System.out.println("Your guess is too low, try again.");
-                    System.out.print("Your guess? ");
-                    guess = scan.nextInt();
-                } else if (guess > randNumber) {
-                    System.out.println("Your guess is too high, try again.");
-                    System.out.print("Your guess? ");
-                    guess = scan.nextInt();
-                }
+        while (true) {
+            int guess;
+
+            try {
+                guess = scan.nextInt();
+            } catch (InputMismatchException e) {
+                String bad_scan = scan.next();
+                System.out.println("That's not an integer, try again.");
+                continue;
             }
-        } else {
-            System.out.println("Well done, " + playerName + "! You found my number in " + countGuesses + " tries!");
-        }
-        if (guess == randNumber) {
-            System.out.println("Well done, " + playerName + "! You found my number in " + countGuesses + " tries!");
+
+            if (guess < 1 || guess > 100) {
+                System.out.println(guess + " is not a valid number, try again.");
+                continue;
+            }
+
+            countGuesses++;
+            if (guess < randNumber) {
+                System.out.println("Your guess is too low, try again.");
+                System.out.print("Your guess? ");
+            } else if (guess > randNumber) {
+                System.out.println("Your guess is too high, try again.");
+                System.out.print("Your guess? ");
+            } else {
+                System.out.println("Well done, " + playerName + "! You found my number in " + countGuesses + " tries!");
+                break;
+            }
         }
     }
 }
