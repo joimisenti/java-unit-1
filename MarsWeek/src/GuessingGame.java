@@ -1,16 +1,23 @@
 import java.util.Scanner;
 
 public class GuessingGame {
-    public Constructor(String someText, double someDecimal, int someNumber) {
-        this.someText = someText;
-        this.someDecimal = someDecimal;
-        this.someNumber = someNumber;
+
+
+    // Guessing Game constructor
+    public GuessingGame() {
+//        this.someText = someText;
+//        this.someDecimal = someDecimal;
+//        this.someNumber = someNumber;
     }
 
-    Scanner scan = new Scanner(System.in);
+    public static void main(String args[]) {
 
-    System.out.println("Howdy, what's your name?");
-    System.out.printlin("(type in your name)");
-    String playerName = scan.nextLine();
+        System.out.println("Howdy, what's your name?");
+        System.out.println("(type in your name)");
+
+        Scanner scan = new Scanner(System.in);
+
+        String playerName = scan.nextLine();
+    }
 
 }
