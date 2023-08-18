@@ -28,6 +28,7 @@ public class Mars {
 
         // Run the guessing game
         new GuessingGame();
+        new MarsExpedition();
     }
         /**
          * Function name: landingCheck
