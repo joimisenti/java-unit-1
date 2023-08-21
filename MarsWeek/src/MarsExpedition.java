@@ -3,11 +3,11 @@ import java.util.Scanner;
 public class MarsExpedition {
 
     // Create a public constructor
-    public MarsExpedition() {
+    public MarsExpedition() throws InterruptedException{
         // empty
-    }
 
-    public static void main(String args[]) throws InterruptedException{
+//    public static void main(String args[]) throws InterruptedException{
+
         // Create new Scanner variable named input to store the user's input
 
         Scanner input = new Scanner(System.in);
@@ -102,9 +102,9 @@ public class MarsExpedition {
 
         System.out.println("Look at you go. You, " +
                 userName +
-                 " the III, first of their Name, Ruler Regent of the Andals, Rhoynar of the First Men, have assembled a team of " + team +
+                " the III, first of their Name, Ruler Regent of the Andals, Rhoynar of the First Men, \nhave assembled a team of " + team +
                 " that will be nourished with the most supreme sustenance of " + snack +
-                " and carried on the expeditious swiftness of " + vehicleChoice);
+                " \nand carried on the expeditious swiftness of " + vehicleChoice);
         System.out.println("You will be popping off the top of an average-height building from an impressively sized cannon in ");
 
         for (int i = 10; i > 0; i--) {
@@ -115,11 +115,13 @@ public class MarsExpedition {
             } else {
                 System.out.println(i + "...");
             }
-        };
+        }
+        ;
 
 
         System.out.println("BOOSTERS SHOOTIN' and ROCKETS BOOMIN'" + "\nGO GO GO!");
 
 
     }
+//    }
 }

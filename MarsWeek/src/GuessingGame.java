@@ -10,9 +10,8 @@ public class GuessingGame {
 //        this.someText = someText;
 //        this.someDecimal = someDecimal;
 //        this.someNumber = someNumber;
-    }
 
-    public static void main(String args[]) {
+//    public static void main(String args[]) {
 
         System.out.println("Howdy, what's your name?");
         System.out.println("(type in your name)");
